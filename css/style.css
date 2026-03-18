@@ -333,85 +333,147 @@ nav.scrolled .hamburger .bar {
    About Section 
    ========================================= */
 .about {
-    padding: 6rem 2rem;
-    background-color: var(--color-cream);
+    padding: 8rem 2rem;
+    background-color: #FFFBE6; /* Soft light custard background from screenshot */
 }
 
 .about-container {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 0.9fr 1.1fr; /* Image slightly narrower as in screenshot */
+    gap: 6rem;
     align-items: center;
 }
 
 .about-image {
     position: relative;
-    border-radius: 20px;
+    border-radius: 40px; /* Highly rounded as in screenshot */
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
 }
 
 .about-image img {
     width: 100%;
     display: block;
-    transition: var(--transition-smooth);
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .about-image:hover img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 .experience-badge {
     position: absolute;
-    bottom: -20px;
-    right: -20px;
-    background-color: var(--color-dark);
+    bottom: 20px; /* Positioned inside the rounded image as in screenshot */
+    right: 20px;
+    background-color: #2C1E16; /* Deep dark cocoa background */
     color: var(--color-white);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 135px;
+    height: 135px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 5px solid var(--color-cream);
+    border: 3px solid #FFFBE6; /* Thin matching cream border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.experience-badge:hover {
+    transform: scale(1.1) rotate(3deg);
 }
 
 .experience-badge .number {
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     color: var(--color-honey);
     line-height: 1;
+    margin-bottom: 1px;
 }
 
 .experience-badge .text {
-    font-size: 0.8rem;
+    font-size: 0.65rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.about-content .section-subtitle {
+    font-family: 'Playfair Display', serif; /* Or similar script/elegant font */
+    font-style: italic;
+    color: var(--color-honey);
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    text-transform: none; /* Soften from previous uppercase */
+    letter-spacing: 0;
+}
+
+.about-content .section-title {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    line-height: 1.15;
+    color: #2C1E16;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.about-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #4A3728;
+    margin-bottom: 1.5rem;
 }
 
 .about-features {
-    margin: 2rem 0;
+    margin: 2.5rem 0;
+    list-style: none;
+    padding: 0;
 }
 
 .about-features li {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.2rem;
     font-weight: 500;
+    color: #2C1E16;
+    font-size: 1.05rem;
 }
 
 .about-features i {
-    color: var(--color-amber);
-    background: rgba(212, 175, 55, 0.2);
-    padding: 0.5rem;
+    color: #B8860B; /* Darker gold/amber checkmark */
+    background: rgba(184, 134, 11, 0.1);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+}
+
+/* Pill Button */
+.about-content .btn-primary {
+    border-radius: 50px;
+    padding: 1rem 2.8rem;
+    font-weight: 600;
+    background-color: #FDB813;
+    color: #2C1E16;
+    border: none;
+    box-shadow: 0 4px 15px rgba(253, 184, 19, 0.3);
+}
+
+.about-content .btn-primary:hover {
+    background-color: #E8A200;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(253, 184, 19, 0.4);
 }
 
 /* =========================================
