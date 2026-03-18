@@ -21,12 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinksItems = document.querySelectorAll('.nav-links li a');
 
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
+        const isActive = hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
+        
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = isActive ? 'hidden' : '';
 
         // Ensure nav gets a background if opened at top
         if (window.scrollY <= 50) {
-            navbar.classList.add('scrolled'); // Force background so mobile links are visible
+            navbar.classList.toggle('scrolled', isActive);
         }
     });
 
@@ -35,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
+            document.body.style.overflow = '';
         });
     });
 
