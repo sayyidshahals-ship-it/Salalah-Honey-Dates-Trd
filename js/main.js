@@ -76,14 +76,20 @@ document.addEventListener('DOMContentLoaded', () => {
         inquiryForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            // Basic mock feedback
             const btn = inquiryForm.querySelector('button');
             const originalText = btn.textContent;
 
             btn.textContent = 'Sending...';
             btn.disabled = true;
 
-            setTimeout(() => {
+            const formData = new FormData(inquiryForm);
+
+            // Using fetch with no-cors to submit to Google Form
+            fetch(inquiryForm.action, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            }).then(() => {
                 btn.textContent = originalText;
                 btn.disabled = false;
                 inquiryForm.reset();
@@ -94,7 +100,66 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     formStatus.textContent = '';
                 }, 5000);
-            }, 1500);
+            }).catch(err => {
+                console.error('Form submission error:', err);
+                formStatus.textContent = 'Something went wrong. Please try again or contact us via phone.';
+                formStatus.style.color = 'red';
+                btn.textContent = originalText;
+                btn.disabled = false;
+            });
         });
+    }
+});
+
+// ----------------------------------------------------
+// Blurred Background Fill for all product images
+// ----------------------------------------------------
+function initBlurredBg() {
+    document.querySelectorAll('.product-image').forEach(container => {
+        const img = container.querySelector('img:not(.samar-slide)') || container.querySelector('img');
+        if (img) {
+            container.style.backgroundImage = `url('${img.src}')`;
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initBlurredBg);
+
+// ----------------------------------------------------
+// Samar Honey Image Slider
+// ----------------------------------------------------
+let samarIndex = 0;
+
+function updateSlider() {
+    const slides    = document.querySelectorAll('.samar-slide');
+    const dots      = document.querySelectorAll('.samar-dot');
+    const container = document.getElementById('samarSlider');
+
+    slides.forEach((s, i) => s.classList.toggle('active', i === samarIndex));
+    dots.forEach((d, i)   => d.classList.toggle('active', i === samarIndex));
+
+    // Update blurred background to match current slide
+    if (container && slides[samarIndex]) {
+        container.style.backgroundImage = `url('${slides[samarIndex].src}')`;
+    }
+}
+
+function moveSlide(dir) {
+    const total = document.querySelectorAll('.samar-slide').length;
+    samarIndex = (samarIndex + dir + total) % total;
+    updateSlider();
+}
+
+function goToSlide(n) {
+    samarIndex = n;
+    updateSlider();
+}
+
+// Init slider background on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('samarSlider');
+    const firstSlide = slider && slider.querySelector('.samar-slide');
+    if (slider && firstSlide) {
+        slider.style.backgroundImage = `url('${firstSlide.src}')`;
     }
 });

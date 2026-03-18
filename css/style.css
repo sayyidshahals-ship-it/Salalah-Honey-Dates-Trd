@@ -450,20 +450,54 @@ nav.scrolled .hamburger .bar {
 }
 
 .product-image {
-    height: 250px;
+    height: 280px;
     overflow: hidden;
-    background-color: #f5f5f5; /* fallback */
+    position: relative;
+    background-color: #f0ebe0; /* fallback while JS loads */
+    background-size: cover;
+    background-position: center;
 }
 
+/* Blurred fill layer — sits behind the real image */
+.product-image::before {
+    content: '';
+    position: absolute;
+    inset: -30px;
+    background: inherit;
+    background-size: cover;
+    background-position: center;
+    filter: blur(24px) brightness(0.85) saturate(1.2);
+    transform: scale(1.1);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Real image on top, fully visible */
 .product-image img {
+    position: relative;
+    z-index: 5;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: var(--transition-smooth);
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Ensure slider images are stacked and on top */
+.product-image .samar-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 0;
+}
+
+.product-image .samar-slide.active {
+    opacity: 1;
 }
 
 .product-card:hover .product-image img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .product-info {
@@ -476,8 +510,220 @@ nav.scrolled .hamburger .bar {
 }
 
 .product-desc {
-    color: #666;
-    margin-bottom: 1.5rem;
+    color: #888;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.8rem;
+}
+
+/* =========================================
+   Premium Luxury Card Overrides
+   ========================================= */
+
+/* Luxury card base */
+.product-card--luxury {
+    background: #fffef8;
+    border-radius: 24px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.04),
+        0 20px 50px rgba(139, 69, 19, 0.07);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
+}
+
+.product-card--luxury:hover {
+    transform: translateY(-14px);
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.06),
+        0 32px 60px rgba(139, 69, 19, 0.13);
+}
+
+/* Slider image height */
+.product-image--slider {
+    height: 400px !important;
+}
+
+/* White Honey fully visible (contain) */
+.product-image--contain {
+    height: 340px;
+    background: linear-gradient(145deg, #fdf8ef, #f5edda);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-image--contain img {
+    width: 85%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    padding: 16px;
+    transition: transform 0.4s ease;
+}
+
+.product-card--luxury:hover .product-image--contain img {
+    transform: scale(1.04);
+}
+
+/* Country / origin badge */
+.product-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: linear-gradient(135deg, #D4AF37, #FDB813);
+    color: #2C1E16;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 5px 12px;
+    border-radius: 50px;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
+}
+
+.product-badge--light {
+    background: linear-gradient(135deg, #f5f0e8, #e8dcc8);
+    color: #5a3e22;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Luxury product info panel */
+.product-info--luxury {
+    padding: 2rem 2rem 2.2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+/* Origin line */
+.product-origin {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-honey);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.product-origin i {
+    font-size: 0.7rem;
+}
+
+/* Luxury heading override */
+.product-info--luxury h3 {
+    font-family: var(--font-heading);
+    font-size: 1.65rem;
+    color: var(--color-dark);
+    margin-bottom: 0.7rem;
+    letter-spacing: -0.3px;
+}
+
+/* Luxury CTA button */
+.btn-luxury {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.7rem 1.7rem;
+    background: linear-gradient(135deg, #D4AF37, #FDB813);
+    color: #2C1E16;
+    font-weight: 700;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    border: none;
+    text-decoration: none;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 14px rgba(212, 175, 55, 0.3);
+}
+
+.btn-luxury:hover {
+    background: linear-gradient(135deg, #c9a228, #e8a200);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+    transform: translateX(3px);
+    color: #1a1008;
+}
+
+.btn-luxury i {
+    transition: transform 0.3s ease;
+}
+
+.btn-luxury:hover i {
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   Samar Honey Image Slider
+   ========================================= */
+.samar-slider {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    background-color: #f9f4ec;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Slide images are handled by the fixed .product-image .samar-slide rule up above */
+
+.samar-prev,
+.samar-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.85);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-dark);
+    font-size: 0.85rem;
+    z-index: 10;
+    transition: var(--transition-smooth);
+}
+
+.samar-prev { left: 10px; }
+.samar-next { right: 10px; }
+
+.samar-prev:hover,
+.samar-next:hover {
+    background: var(--color-honey);
+    color: var(--color-white);
+}
+
+.samar-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+}
+
+.samar-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.samar-dot.active {
+    background: var(--color-honey);
+    transform: scale(1.3);
 }
 
 /* =========================================

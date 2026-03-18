@@ -155,6 +155,54 @@
                     <a href="#contact" class="link-btn">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
+            <!-- Product 4 - Samar Honey Slider -->
+            <div class="product-card product-card--luxury fade-in-up" style="transition-delay: 0.3s;">
+                <div class="product-image product-image--slider samar-slider" id="samarSlider">
+                    <img src="images/samar_honey_new_1.png" alt="Samar Honey" class="samar-slide active">
+                    <img src="images/samar_honey_new_2.png" alt="Samar Honey Bundle" class="samar-slide">
+                    <button class="samar-prev" onclick="moveSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="samar-next" onclick="moveSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="samar-dots">
+                        <span class="samar-dot active" onclick="goToSlide(0)"></span>
+                        <span class="samar-dot" onclick="goToSlide(1)"></span>
+                    </div>
+                    <span class="product-badge">From Oman</span>
+                </div>
+                <div class="product-info product-info--luxury">
+                    <p class="product-origin"><i class="fa-solid fa-location-dot"></i> Highland Oman</p>
+                    <h3>Samar Honey</h3>
+                    <p class="product-desc">Pure mountain honey harvested from the highlands of Oman, known for its rich aroma and deep flavour.</p>
+                    <a href="#contact" class="btn-luxury">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <!-- Product 5 - White Honey -->
+            <div class="product-card product-card--luxury fade-in-up" style="transition-delay: 0.4s;">
+                <div class="product-image product-image--contain">
+                    <img src="images/white_honey.png" alt="Russian White Honey">
+                    <span class="product-badge product-badge--light">From Russia</span>
+                </div>
+                <div class="product-info product-info--luxury">
+                    <p class="product-origin"><i class="fa-solid fa-location-dot"></i> Russia</p>
+                    <h3>White Honey</h3>
+                    <p class="product-desc">A rare and luxurious honey known for its smooth texture and delicate sweetness.</p>
+                    <a href="#contact" class="btn-luxury">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Product 6 - Honey Nuts -->
+            <div class="product-card product-card--luxury fade-in-up" style="transition-delay: 0.5s;">
+                <div class="product-image">
+                    <img src="images/honey_nuts.png" alt="Premium Honey Nuts">
+                    <span class="product-badge">From UAE</span>
+                </div>
+                <div class="product-info product-info--luxury">
+                    <p class="product-origin"><i class="fa-solid fa-location-dot"></i> UAE Made</p>
+                    <h3>Premium Honey Nuts</h3>
+                    <p class="product-desc">A premium blend of pure honey and hand-picked nuts for a delicious crunch.</p>
+                    <a href="#contact" class="btn-luxury">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -195,7 +243,8 @@
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
                             <h4>Location</h4>
-                            <p>UAE (Available Nationwide)</p>
+                            <p><a href="https://maps.app.goo.gl/5NGiDTTprMn5Z1Pa7" target="_blank"
+                                    style="text-decoration: underline;">UAE (Available Nationwide)</a></p>
                         </div>
                     </div>
                     <div class="info-block">
@@ -215,25 +264,29 @@
                 </div>
 
                 <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/salalah_honeyy_" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61586235282479" target="_blank"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.me/971551245021" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
 
             <div class="contact-form fade-in-up" style="transition-delay: 0.1s;">
-                <form id="inquiryForm">
+                <form id="inquiryForm"
+                    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdFzFrfxoyJYrxs4ZOlnFm9OEcjhSIsLiEwVI0K2mvkJLD6SQ/formResponse"
+                    method="POST" target="_self">
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="text" name="entry.243825933" id="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="Your Email" required>
+                        <input type="email" name="entry.776711966" id="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" id="phone" placeholder="Phone Number">
+                        <input type="tel" name="entry.1902138772" id="phone" placeholder="Phone Number">
                     </div>
                     <div class="form-group">
-                        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        <textarea name="entry.311320894" id="message" rows="5" placeholder="Your Message" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Send Message</button>
                     <p id="formStatus" class="form-status"></p>
