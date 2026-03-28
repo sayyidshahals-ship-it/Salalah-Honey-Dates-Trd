@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cairo:wght@400;600;700&display=swap"
         rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -29,12 +29,20 @@
                 <span>Salalah Honey</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#market">Our Market</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-i18n="nav_home">Home</a></li>
+                <li><a href="#about" data-i18n="nav_about">About</a></li>
+                <li><a href="#products" data-i18n="nav_products">Products</a></li>
+                <li><a href="#market" data-i18n="nav_market">Our Market</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
             </ul>
+            
+            <div class="lang-switcher">
+                <button id="langToggle" class="lang-btn">
+                    <i class="fa-solid fa-globe"></i>
+                    <span id="currentLang">AR</span>
+                </button>
+            </div>
+
             <div class="hamburger">
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -47,12 +55,12 @@
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content fade-in-up">
-            <span class="badge">Trusted Since 2009</span>
-            <h1>15 Years of Pure Quality Honey in the UAE</h1>
-            <p>Discover the finest natural honey and premium dates sourced with passion and authenticity.</p>
+            <span class="badge" data-i18n="hero_badge">Trusted Since 2009</span>
+            <h1 data-i18n="hero_title">15 Years of Pure Quality Honey in the UAE</h1>
+            <p data-i18n="hero_desc">Discover the finest natural honey and premium dates sourced with passion and authenticity.</p>
             <div class="hero-buttons">
-                <a href="#products" class="btn btn-primary">Our Products</a>
-                <a href="#about" class="btn btn-secondary">Our Story</a>
+                <a href="#products" class="btn btn-primary" data-i18n="hero_btn_products">Our Products</a>
+                <a href="#about" class="btn btn-secondary" data-i18n="hero_btn_story">Our Story</a>
             </div>
         </div>
     </section>
@@ -62,23 +70,23 @@
         <div class="trust-container">
             <div class="trust-item fade-in-up">
                 <i class="fa-solid fa-award"></i>
-                <h3>Premium Quality</h3>
-                <p>100% natural and authentic.</p>
+                <h3 data-i18n="trust_1_title">Premium Quality</h3>
+                <p data-i18n="trust_1_desc">100% natural and authentic.</p>
             </div>
             <div class="trust-item fade-in-up" style="transition-delay: 0.1s;">
                 <i class="fa-solid fa-leaf"></i>
-                <h3>Locally Sourced</h3>
-                <p>Finest ingredients from nature.</p>
+                <h3 data-i18n="trust_2_title">Locally Sourced</h3>
+                <p data-i18n="trust_2_desc">Finest ingredients from nature.</p>
             </div>
             <div class="trust-item fade-in-up" style="transition-delay: 0.2s;">
                 <i class="fa-solid fa-truck-fast"></i>
-                <h3>UAE Delivery</h3>
-                <p>Available across all Emirates.</p>
+                <h3 data-i18n="trust_3_title">UAE Delivery</h3>
+                <p data-i18n="trust_3_desc">Available across all Emirates.</p>
             </div>
             <div class="trust-item fade-in-up" style="transition-delay: 0.3s;">
                 <i class="fa-solid fa-star"></i>
-                <h3>15+ Years</h3>
-                <p>Trusted market experience.</p>
+                <h3 data-i18n="trust_4_title">15+ Years</h3>
+                <p data-i18n="trust_4_desc">Trusted market experience.</p>
             </div>
         </div>
     </section>
@@ -94,20 +102,20 @@
                 </div>
             </div>
             <div class="about-content slide-in-right">
-                <h4 class="section-subtitle">Our Story</h4>
-                <h2 class="section-title">Commitment to Quality & Authenticity</h2>
-                <p>For over 15 years, Salalah Honey & Dates Trd has been a cornerstone of trust in the UAE market. We
+                <h4 class="section-subtitle" data-i18n="about_subtitle">Our Story</h4>
+                <h2 class="section-title" data-i18n="about_title">Commitment to Quality & Authenticity</h2>
+                <p data-i18n="about_desc_1">For over 15 years, Salalah Honey & Dates Trd has been a cornerstone of trust in the UAE market. We
                     started with a simple belief: nature provides the best, and our job is simply to bring it to your
                     table uncompromised.</p>
-                <p>Our journey has led us to source the most exquisite, pure honey and the plumpest, premium dates. We
+                <p data-i18n="about_desc_2">Our journey has led us to source the most exquisite, pure honey and the plumpest, premium dates. We
                     carefully select every product to ensure it meets our rigorous standards for taste, purity, and
                     health benefits.</p>
                 <ul class="about-features">
-                    <li><i class="fa-solid fa-check"></i> 100% Pure, Unfiltered Honey</li>
-                    <li><i class="fa-solid fa-check"></i> Hand-picked Premium Dates</li>
-                    <li><i class="fa-solid fa-check"></i> Ethical Sourcing Practices</li>
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="about_feat_1">100% Pure, Unfiltered Honey</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="about_feat_2">Hand-picked Premium Dates</span></li>
+                    <li><i class="fa-solid fa-check"></i> <span data-i18n="about_feat_3">Ethical Sourcing Practices</span></li>
                 </ul>
-                <a href="#contact" class="btn btn-primary mt-2">Get in Touch</a>
+                <a href="#contact" class="btn btn-primary mt-2" data-i18n="about_btn">Get in Touch</a>
             </div>
         </div>
     </section>
@@ -115,22 +123,23 @@
     <!-- Products Section -->
     <section id="products" class="products">
         <div class="section-header fade-in-up">
-            <h4 class="section-subtitle">Our Treasures</h4>
-            <h2 class="section-title">Featured Products</h2>
-            <p>Explore our selection of nature's finest offerings.</p>
+            <h4 class="section-subtitle" data-i18n="products_subtitle">Our Treasures</h4>
+            <h2 class="section-title" data-i18n="products_title">Featured Products</h2>
+            <p data-i18n="products_desc">Explore our selection of nature's finest offerings.</p>
         </div>
 
         <div class="products-grid">
-            <!-- Product 3 -->
-            <div class="product-card fade-in-up">
+            <!-- Product 3 - Premium Dates -->
+            <div class="product-card product-card--luxury fade-in-up">
                 <div class="product-image">
-                    <img src="images/premium_dates.png" alt="Premium Medjool Dates">
+                    <img src="images/premium_dates.png" alt="Premium Saudi Dates">
+                    <span class="product-badge">From Saudi</span>
                 </div>
-                <div class="product-info">
-                    <h3>Premium Dates</h3>
-                    <p class="product-desc">Luxurious, plump dates known for their caramel-like taste and soft texture.
-                    </p>
-                    <a href="#contact" class="link-btn">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="product-info product-info--luxury">
+                    <p class="product-origin"><i class="fa-solid fa-location-dot"></i> <span data-i18n="p3_origin">Saudi Arabia</span></p>
+                    <h3 data-i18n="p3_title">Premium Dates</h3>
+                    <p class="product-desc" data-i18n="p3_desc">Luxurious, plump dates harvested from Saudi Arabia, known for their caramel-like taste and soft texture.</p>
+                    <a href="#contact" class="btn-luxury"><span data-i18n="btn_inquire">Inquire Now</span> <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <!-- Product 4 - Samar Honey Slider -->
@@ -147,10 +156,10 @@
                     <span class="product-badge">From Oman</span>
                 </div>
                 <div class="product-info product-info--luxury">
-                    <p class="product-origin"><i class="fa-solid fa-location-dot"></i> Highland Oman</p>
-                    <h3>Samar Honey</h3>
-                    <p class="product-desc">Pure mountain honey harvested from the highlands of Oman, known for its rich aroma and deep flavour.</p>
-                    <a href="#contact" class="btn-luxury">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
+                    <p class="product-origin"><i class="fa-solid fa-location-dot"></i> <span data-i18n="p4_origin">Highland Oman</span></p>
+                    <h3 data-i18n="p4_title">Samar Honey</h3>
+                    <p class="product-desc" data-i18n="p4_desc">Pure mountain honey harvested from the highlands of Oman, known for its rich aroma and deep flavour.</p>
+                    <a href="#contact" class="btn-luxury"><span data-i18n="btn_inquire">Inquire Now</span> <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <!-- Product 5 - White Honey -->
@@ -160,10 +169,10 @@
                     <span class="product-badge product-badge--light">From Russia</span>
                 </div>
                 <div class="product-info product-info--luxury">
-                    <p class="product-origin"><i class="fa-solid fa-location-dot"></i> Russia</p>
-                    <h3>White Honey</h3>
-                    <p class="product-desc">A rare and luxurious honey known for its smooth texture and delicate sweetness.</p>
-                    <a href="#contact" class="btn-luxury">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
+                    <p class="product-origin"><i class="fa-solid fa-location-dot"></i> <span data-i18n="p5_origin">Russia</span></p>
+                    <h3 data-i18n="p5_title">White Honey</h3>
+                    <p class="product-desc" data-i18n="p5_desc">A rare and luxurious honey known for its smooth texture and delicate sweetness.</p>
+                    <a href="#contact" class="btn-luxury"><span data-i18n="btn_inquire">Inquire Now</span> <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
@@ -174,10 +183,10 @@
                     <span class="product-badge">From UAE</span>
                 </div>
                 <div class="product-info product-info--luxury">
-                    <p class="product-origin"><i class="fa-solid fa-location-dot"></i> UAE Made</p>
-                    <h3>Premium Honey Nuts</h3>
-                    <p class="product-desc">A premium blend of pure honey and hand-picked nuts for a delicious crunch.</p>
-                    <a href="#contact" class="btn-luxury">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
+                    <p class="product-origin"><i class="fa-solid fa-location-dot"></i> <span data-i18n="p6_origin">UAE Made</span></p>
+                    <h3 data-i18n="p6_title">Premium Honey Nuts</h3>
+                    <p class="product-desc" data-i18n="p6_desc">A premium blend of pure honey and hand-picked nuts for a delicious crunch.</p>
+                    <a href="#contact" class="btn-luxury"><span data-i18n="btn_inquire">Inquire Now</span> <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
@@ -188,10 +197,10 @@
                     <span class="product-badge">From Oman</span>
                 </div>
                 <div class="product-info product-info--luxury">
-                    <p class="product-origin"><i class="fa-solid fa-location-dot"></i> Salalah, Oman</p>
-                    <h3>Royal Sidr Honey</h3>
-                    <p class="product-desc">Harvested from ancient Sidr trees in Salalah, this elite honey is prized for its rare floral aroma and smooth taste.</p>
-                    <a href="#contact" class="btn-luxury">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
+                    <p class="product-origin"><i class="fa-solid fa-location-dot"></i> <span data-i18n="p7_origin">Salalah, Oman</span></p>
+                    <h3 data-i18n="p7_title">Royal Sidr Honey</h3>
+                    <p class="product-desc" data-i18n="p7_desc">Harvested from ancient Sidr trees in Salalah, this elite honey is prized for its rare floral aroma and smooth taste.</p>
+                    <a href="#contact" class="btn-luxury"><span data-i18n="btn_inquire">Inquire Now</span> <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
@@ -202,10 +211,10 @@
                     <span class="product-badge">From Oman</span>
                 </div>
                 <div class="product-info product-info--luxury">
-                    <p class="product-origin"><i class="fa-solid fa-location-dot"></i> Oman</p>
-                    <h3>Honey Sidr 250g</h3>
-                    <p class="product-desc">A premium Sidr honey from Oman, now delicately packaged in a 250g jar for ultimate freshness.</p>
-                    <a href="#contact" class="btn-luxury">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
+                    <p class="product-origin"><i class="fa-solid fa-location-dot"></i> <span data-i18n="p8_origin">Oman</span></p>
+                    <h3 data-i18n="p8_title">Honey Sidr 250g</h3>
+                    <p class="product-desc" data-i18n="p8_desc">A premium Sidr honey from Oman, now delicately packaged in a 250g jar for ultimate freshness.</p>
+                    <a href="#contact" class="btn-luxury"><span data-i18n="btn_inquire">Inquire Now</span> <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
@@ -215,23 +224,110 @@
     <!-- Our Market Section -->
     <section id="market" class="market">
         <div class="market-content fade-in-up">
-            <h4 class="section-subtitle">Distribution</h4>
-            <h2 class="section-title">Available Across the UAE</h2>
-            <p>Our expansive distribution network ensures that our premium quality honey and dates reach customers and
+            <h4 class="section-subtitle" data-i18n="market_subtitle">Distribution</h4>
+            <h2 class="section-title" data-i18n="market_title">Available Across the UAE</h2>
+            <p data-i18n="market_desc">Our expansive distribution network ensures that our premium quality honey and dates reach customers and
                 wholesale buyers across all the Emirates.</p>
             <div class="market-stats">
                 <div class="stat">
                     <h3>7</h3>
-                    <p>Emirates Served</p>
+                    <p data-i18n="market_stat_1">Emirates Served</p>
                 </div>
                 <div class="stat">
                     <h3>500+</h3>
-                    <p>Wholesale Partners</p>
+                    <p data-i18n="market_stat_2">Wholesale Partners</p>
                 </div>
                 <div class="stat">
                     <h3>10k+</h3>
-                    <p>Happy Customers</p>
+                    <p data-i18n="market_stat_3">Happy Customers</p>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-header fade-in-up">
+            <h4 class="section-subtitle" data-i18n="testimonials_subtitle">What Our Customers Say</h4>
+            <h2 class="section-title" data-i18n="testimonials_title">Our Client Stories</h2>
+        </div>
+        
+        <div class="testimonials-container">
+            <div class="testimonials-track" id="testimonialTrack">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" data-i18n="test_1_text">"The Sidr honey is absolutely pure and rich in taste. Hands down the best I've ever tried in the UAE!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4 data-i18n="test_1_name">Ahmed K.</h4>
+                            <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> <span data-i18n="verified">Verified Customer</span></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" data-i18n="test_2_text">"Excellent quality and fast delivery. The Samar honey helped a lot with my sore throat. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4 data-i18n="test_2_name">Sarah J.</h4>
+                            <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> <span data-i18n="verified">Verified Customer</span></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" data-i18n="test_3_text">"Premium packaging and even better taste. These dates are the perfect gift for my family back home."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4 data-i18n="test_3_name">Mohammed R.</h4>
+                            <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> <span data-i18n="verified">Verified Customer</span></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" data-i18n="test_4_text">"Authentic local products with 15+ years of trust. You can truly taste the quality in every jar."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4 data-i18n="test_4_name">Fatima S.</h4>
+                            <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> <span data-i18n="verified">Verified Customer</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-controls">
+                <button class="test-prev" id="testPrev"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="test-dots" id="testDots"></div>
+                <button class="test-next" id="testNext"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
@@ -240,30 +336,30 @@
     <section id="contact" class="contact">
         <div class="contact-container">
             <div class="contact-info fade-in-up">
-                <h4 class="section-subtitle">Get in Touch</h4>
-                <h2 class="section-title">Contact Us</h2>
-                <p>Interested in wholesale or just want to taste our premium products? Reach out today.</p>
+                <h4 class="section-subtitle" data-i18n="contact_subtitle">Get in Touch</h4>
+                <h2 class="section-title" data-i18n="contact_title">Contact Us</h2>
+                <p data-i18n="contact_desc">Interested in wholesale or just want to taste our premium products? Reach out today.</p>
 
                 <div class="info-blocks">
                     <div class="info-block">
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
-                            <h4>Location</h4>
+                            <h4 data-i18n="contact_loc_label">Location</h4>
                             <p><a href="https://maps.app.goo.gl/5NGiDTTprMn5Z1Pa7" target="_blank"
-                                    style="text-decoration: underline;">UAE (Available Nationwide)</a></p>
+                                    style="text-decoration: underline;" data-i18n="contact_loc_val">UAE (Available Nationwide)</a></p>
                         </div>
                     </div>
                     <div class="info-block">
                         <i class="fa-solid fa-phone"></i>
                         <div>
-                            <h4>Phone</h4>
+                            <h4 data-i18n="contact_phone_label">Phone</h4>
                             <p><a href="tel:0551245021">0551245021</a></p>
                         </div>
                     </div>
                     <div class="info-block">
                         <i class="fa-solid fa-envelope"></i>
                         <div>
-                            <h4>Email</h4>
+                            <h4 data-i18n="contact_email_label">Email</h4>
                             <p><a href="mailto:honeysalalah@gmail.com">honeysalalah@gmail.com</a></p>
                         </div>
                     </div>
@@ -285,18 +381,18 @@
                     action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdFzFrfxoyJYrxs4ZOlnFm9OEcjhSIsLiEwVI0K2mvkJLD6SQ/formResponse"
                     method="POST" target="_self">
                     <div class="form-group">
-                        <input type="text" name="entry.243825933" id="name" placeholder="Your Name" required>
+                        <input type="text" name="entry.243825933" id="name" placeholder="Your Name" required data-i18n-placeholder="form_name">
                     </div>
                     <div class="form-group">
-                        <input type="email" name="entry.776711966" id="email" placeholder="Your Email" required>
+                        <input type="email" name="entry.776711966" id="email" placeholder="Your Email" required data-i18n-placeholder="form_email">
                     </div>
                     <div class="form-group">
-                        <input type="tel" name="entry.1902138772" id="phone" placeholder="Phone Number">
+                        <input type="tel" name="entry.1902138772" id="phone" placeholder="Phone Number" data-i18n-placeholder="form_phone">
                     </div>
                     <div class="form-group">
-                        <textarea name="entry.311320894" id="message" rows="5" placeholder="Your Message" required></textarea>
+                        <textarea name="entry.311320894" id="message" rows="5" placeholder="Your Message" required data-i18n-placeholder="form_msg"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                <button type="submit" class="btn btn-primary btn-block" data-i18n="form_submit">Send Message</button>
                     <p id="formStatus" class="form-status"></p>
                 </form>
             </div>
@@ -312,16 +408,16 @@
                         style="height: 65px; width: auto; filter: brightness(0) invert(1);">
                     <span>Salalah Honey</span>
                 </a>
-                <p class="footer-desc">Premium honey & dates supplier with over 15 years of market experience in the
+                <p class="footer-desc" data-i18n="footer_desc">Premium honey & dates supplier with over 15 years of market experience in the
                     UAE.</p>
             </div>
             <div class="footer-col">
-                <h3>Quick Links</h3>
+                <h3 data-i18n="footer_links_label">Quick Links</h3>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#market">Our Market</a></li>
+                    <li><a href="#home" data-i18n="nav_home">Home</a></li>
+                    <li><a href="#about" data-i18n="nav_about">About</a></li>
+                    <li><a href="#products" data-i18n="nav_products">Products</a></li>
+                    <li><a href="#market" data-i18n="nav_market">Our Market</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -332,7 +428,7 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h3>Trust</h3>
+                <h3 data-i18n="footer_trust_label">Trust</h3>
                 <div class="trust-badges">
                     <i class="fa-solid fa-shield-halved"></i>
                     <i class="fa-solid fa-certificate"></i>
